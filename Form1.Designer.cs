@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             nome_lbl = new Label();
             nome_box = new TextBox();
             congome_txtBox = new TextBox();
@@ -47,6 +48,15 @@
             confirmData_lbl = new Label();
             genere_lbl = new Label();
             genere_comboBox = new ComboBox();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            Person_GridView = new DataGridView();
+            tabPage2 = new TabPage();
+            Lorenz_dbbindingSource = new BindingSource(components);
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Person_GridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Lorenz_dbbindingSource).BeginInit();
             SuspendLayout();
             // 
             // nome_lbl
@@ -223,11 +233,53 @@
             genere_comboBox.TabIndex = 18;
             genere_comboBox.SelectedIndexChanged += genere_comboBox_SelectedIndexChanged;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(779, 102);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(295, 248);
+            tabControl1.TabIndex = 19;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(Person_GridView);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(287, 215);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // person_GridView
+            // 
+            Person_GridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Person_GridView.Location = new Point(6, 6);
+            Person_GridView.Name = "person_GridView";
+            Person_GridView.RowHeadersWidth = 51;
+            Person_GridView.Size = new Size(300, 188);
+            Person_GridView.TabIndex = 0;
+            Person_GridView.CellContentClick += Person_GridView_CellContentClick;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(287, 215);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1073, 450);
+            Controls.Add(tabControl1);
             Controls.Add(genere_comboBox);
             Controls.Add(genere_lbl);
             Controls.Add(confirmData_lbl);
@@ -249,6 +301,10 @@
             Controls.Add(nome_lbl);
             Name = "Form1";
             Text = "Insert_Person";
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Person_GridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Lorenz_dbbindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,5 +330,10 @@
         private Label confirmData_lbl;
         private Label genere_lbl;
         private ComboBox genere_comboBox;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private DataGridView Person_GridView;
+        private TabPage tabPage2;
+        private BindingSource Lorenz_dbbindingSource;
     }
 }
